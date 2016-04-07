@@ -1,1 +1,8 @@
-<h1>Home Page</h1>
+<h2>Chat Rooms</h2>
+<div ng-repeat="room in home.rooms">
+	<p>
+		<a> {{ room.name }} </a>
+		<br />
+		<a> {{ room.description }} </a>
+	</p>
+</div>
