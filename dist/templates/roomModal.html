@@ -3,14 +3,14 @@
 		<h3>New Room</h3>
 		<md-input-container>
 			<label>Room Name</label>
-			<input type="text" ng-model="room.name" required>
+			<input type="text" ng-model="modal.newRoom.name" required>
 		</md-input-container>
 		<md-input-container>
 			<label>Room Description</label>
-			<input type="text" ng-model="room.description" required>
+			<input type="text" ng-model="modal.newRoom.description" required>
 		</md-input-container>
 	</md-dialog-content>
 	<md-dialog-actions>
-		<md-button class="md-primary">Submit</md-button>
+		<md-button class="md-primary" ng-click="modal.pushRoom()">Submit</md-button>
 	</md-dialog-actions>
 </md-dialog>

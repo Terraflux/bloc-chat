@@ -6,22 +6,20 @@
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.7/angular-material.css">
 	</head>
 	<body>
-		<div class="page" layout="row">
+		<div class="page" ng-controller="NavCtrl as nav" layout="row">
 			<md-sidenav md-component-id="right" md-is-locked-open="true" class="md-hue-1">
 				
 				<h3>Chat Rooms</h3>
-				<div ng-controller="NavCtrl as nav">
-
-					<div>{{ nav.rooms }}</div>
+				<div >
 					
-					<div ng-repeat"room in nav.rooms track by $index">
-						<a> {{ room }} </a>
+					<div ng-repeat="room in nav.rooms">
+						<a> {{ room.name }} </a>
 						<br />
 						<a> {{ room.description }} </a>
 					</div>
 				</div>
 
-				<md-button ng-controller="ModalCtrl as modal" ng-click="modal.showNewRoomPrompt($event)" class="md-raised">New Room</md-button>
+				<md-button ng-click="nav.showNewRoomPrompt($event)" class="md-raised">New Room</md-button>
 				
 				
 			</md-sidenav>

@@ -4,18 +4,14 @@
 		
 		this.newRoom = {};
 
-		this.showNewRoomPrompt = function($event) {
-			$mdDialog.show({
-				templateUrl: 'templates/roomModal.html',
-				clickOutsideToClose: true,
-				controller: 'ModalCtrl',
-				targetEvent: $event
-			});
+		this.pushRoom = function(){
+			Room.all.$add(this.newRoom);
+			this.newRoom = {};
 		}
 
 	};
 
 	angular
 		.module('blocChat')
-		.controller('ModalCtrl', ['$mdDialog', '$mdMedia', 'Room', ModalCtrl]);
+		.controller('ModalCtrl', ModalCtrl);
 })();
